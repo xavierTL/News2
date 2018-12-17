@@ -1,0 +1,16 @@
+.navContainer {
+  flex: 1;
+  border: solid red 1px;
+  display: flex;
+  flex-direction: column;
+}
+
+.navHeader {
+  flex: 1;
+  border: solid blue 1px;
+}
+
+.topicsContainers {
+  flex: 6;
+  border: solid green 1px;
+}

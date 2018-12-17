@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+.mainHeader {
+  flex: 2;
+  display: flex;
+  font-family: Pacifico;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 400%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.logo {
+  margin-left: 50px;
+  width: 130px;
+  height: 130px;
+}

@@ -1,27 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Nav from './components/Nav';
+import SideBar from './components/SideBar';
+import ArticleDisplay from './components/ArticleDisplay';
+import * as api from './api/api';
 
 class App extends Component {
+  state = {
+    topics: []
+  };
   render() {
+    const { topics } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header />
+        <div className="mainSpread">
+          <Nav topics={topics} />
+          <ArticleDisplay />
+          <SideBar />
+        </div>
+        <Footer />
       </div>
     );
+  }
+  componentDidMount() {
+    api.fetchTopics().then(topics => {
+      console.log(topics);
+      this.setState({ topics });
+    });
   }
 }
 
