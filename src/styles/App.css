@@ -15,3 +15,14 @@ body {
   flex: 8;
   border: solid red 1px;
 }
+
+h2,
+p {
+  padding: 0px;
+  margin: 0px;
+}
+
+.center {
+  flex: 4;
+  display: flex;
+}

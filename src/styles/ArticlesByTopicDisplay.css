@@ -1,0 +1,9 @@
+.articlesByTopic {
+  display: flex;
+  flex-direction: row;
+  flex: 4;
+  overflow: scroll;
+  align-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

@@ -4,8 +4,10 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
 import SideBar from './components/SideBar';
-import ArticleDisplay from './components/ArticleDisplay';
+import ArticlesByTopicDisplay from './components/ArticlesByTopicDisplay';
+import { Router } from '@reach/router';
 import * as api from './api/api';
+import ArticleDisplay from './components/ArticleDisplay';
 
 class App extends Component {
   state = {
@@ -18,7 +20,10 @@ class App extends Component {
         <Header />
         <div className="mainSpread">
           <Nav topics={topics} />
-          <ArticleDisplay />
+          <Router className="center">
+            <ArticlesByTopicDisplay path="topics/:slug" />
+            <ArticleDisplay path="articles/:id" />
+          </Router>
           <SideBar />
         </div>
         <Footer />

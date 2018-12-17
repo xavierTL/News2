@@ -1,16 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
 .navContainer {
   flex: 1;
-  border: solid red 1px;
   display: flex;
   flex-direction: column;
+  font-family: Pacifico;
 }
 
 .navHeader {
+  font-size: 150%;
+  flex: 0.5;
+  margin: 0px;
+  padding: 0px;
   flex: 1;
-  border: solid blue 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.topicsContainers {
+.topicsContainer {
   flex: 6;
-  border: solid green 1px;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+}
+.topicButton {
+  width: 100%;
+}
+
+.topicButtons {
+  height: 50px;
+  display: flex;
+}
+
+.inner {
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  border: 0px;
+  font-size: 150%;
+  font-family: Pacifico;
+}
+button:focus {
+  outline: 0px;
+}
+
+#selected {
+  color: white;
+  background-color: black;
 }

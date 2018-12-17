@@ -1,0 +1,9 @@
+.articleCard {
+  border: solid #ff0000 2px;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
