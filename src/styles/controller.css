@@ -1,0 +1,8 @@
+.controlContainer {
+  flex: 1;
+  height: 50px;
+  width: inherit;
+  font-family: Oswald;
+  color: black;
+  border: solid green 5px;
+}

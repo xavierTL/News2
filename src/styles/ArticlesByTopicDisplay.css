@@ -1,9 +1,14 @@
 .articlesByTopic {
   display: flex;
   flex-direction: row;
-  flex: 4;
+  flex: 8;
   overflow: scroll;
-  align-content: space-between;
-  justify-content: space-evenly;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.artsCont {
+  display: flex;
+  flex-direction: column;
+  border: solid red 1px;
 }

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC');
+
+.commentsContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.commentContainer {
+  width: 22%;
+  height: 130px;
+  margin-right: 5px;
+  overflow: scroll;
+  font-family: 'Noto Serif TC', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 75%;
+}
+.commentBody {
+  font-style: italic;
+  overflow: scroll;
+  font-size: 90%;
+}
+
+.commentAuthor {
+  font-weight: bold;
+}

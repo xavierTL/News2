@@ -3,7 +3,10 @@ import '../styles/SideBar.css';
 
 class SideBar extends Component {
   render() {
-    return <div className="sideBarContainer">side</div>;
+    const { username } = this.props;
+    return (
+      <div className="sideBarContainer">{`welcome back, ${username}`}</div>
+    );
   }
 }
 

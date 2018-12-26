@@ -3,6 +3,9 @@
   flex-direction: column;
   height: 100vh;
 }
+::-webkit-scrollbar {
+  display: none;
+}
 
 body {
   margin: 0px;
@@ -13,7 +16,6 @@ body {
   display: flex;
   flex-direction: row;
   flex: 8;
-  border: solid red 1px;
 }
 
 h2,
@@ -23,6 +25,9 @@ p {
 }
 
 .center {
-  flex: 4;
+  flex: 5;
   display: flex;
+}
+.articleDisplay {
+  margin: 10px;
 }

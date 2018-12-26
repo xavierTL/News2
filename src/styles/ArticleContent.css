@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC');
+
+.articleContent {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Noto Serif TC', sans-serif;
+  border: solid red 1px;
+}
+
+.articleHeader {
+  font-family: 'Noto Serif TC', sans-serif;
+  text-decoration: underline;
+}
+.author {
+  font-style: italic;
+}
+.articleTop {
+  display: flex;
+  align-items: center;
+}
+.articleData {
+  display: flex;
+}
+
+.articleBody {
+  font-size: 80%;
+}

@@ -1,9 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
 .articleCard {
-  border: solid #ff0000 2px;
   height: 200px;
   width: 200px;
   display: flex;
   flex-direction: column;
-  margin-top: 7px;
-  margin-bottom: 7px;
+  padding: 10px;
+  border-radius: 5%;
+  border: solid lightgrey 8px;
+  margin: 5px;
+  font-family: Oswald;
+  font-size: 25.5 vw;
+  color: black;
 }
+
+.articleCard:hover {
+  border: solid darkgrey 8px;
+}
+
+.cardData {
+  flex: 1;
+  font-family: 'Oswald', light;
+}
+/* .author {
+  text-decoration: underline;
+} */

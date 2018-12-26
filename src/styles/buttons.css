@@ -1,0 +1,10 @@
+.moreArticles {
+  height: 200px;
+  width: 200px;
+  padding: 10px;
+  border-radius: 5%;
+  border: solid lightgrey 8px;
+  margin: 5px;
+  font-family: Oswald;
+  color: black;
+}

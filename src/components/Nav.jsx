@@ -9,10 +9,12 @@ class Nav extends Component {
     const { topics } = this.props;
     return (
       <div className="navContainer">
-        <div className="navHeader">
-          <div>
-            <h2>Topics</h2>
-          </div>
+        <div className="header">
+          <img
+            className="logo"
+            alt="logo"
+            src={require('../images/icon.svg')}
+          />
         </div>
         <div className="topicsContainer">
           {topics.map(topic => (
@@ -23,7 +25,7 @@ class Nav extends Component {
                   id={this.state.select === topic.slug ? 'selected' : null}
                   onClick={() => this.toggleActive(topic.slug)}
                 >
-                  {topic.slug}
+                  {topic.slug.toUpperCase()}
                 </button>
               </Link>
             </div>

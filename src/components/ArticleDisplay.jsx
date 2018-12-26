@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 import * as api from '../api/api';
+import ArticleContent from './ArticleContent';
+import ArticleComments from './ArticleComments';
+import '../styles/ArticleDisplay.css';
 
 class ArticleDisplay extends Component {
   state = {
     article: {}
   };
   render() {
-    return <div>{this.props.id}</div>;
+    const { id } = this.props;
+    const { article } = this.state;
+    return (
+      <div className="articleDisplay">
+        <ArticleContent article={article} />
+        <ArticleComments id={id} />
+      </div>
+    );
   }
   componentDidMount() {
     api.fetchArticleById(this.props.id).then(article => {
