@@ -16,19 +16,14 @@ class ArticleCard extends Component {
     return (
       <Link to={`/articles/${article_id}`} style={{ textDecoration: 'none' }}>
         <div className={`articleCard`}>
-          <Textfit
-            style={{ flex: 4 }}
-            className="cardHead"
-            mode="multi"
-            max={70}
-          >
+          <Textfit style={{ height: '150px' }} mode="multi" max={70}>
             {title}
           </Textfit>
           <div className="cardData">
-            <div className={username === author ? 'author' : null}>
-              by {author}.
+            <div className={`author ${username === author ? 'user' : null}`}>
+              by {author}
             </div>
-            <p>{`commments: ${comment_count}, votes: ${votes}`}</p>
+            <p>{`commments: ${comment_count} votes: ${votes}`}</p>
           </div>
         </div>
       </Link>

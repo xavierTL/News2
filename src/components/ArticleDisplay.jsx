@@ -9,12 +9,12 @@ class ArticleDisplay extends Component {
     article: {}
   };
   render() {
-    const { id } = this.props;
+    const { id, user_id, username } = this.props;
     const { article } = this.state;
     return (
       <div className="articleDisplay">
         <ArticleContent article={article} />
-        <ArticleComments id={id} />
+        <ArticleComments id={id} username={username} user_id={user_id} />
       </div>
     );
   }

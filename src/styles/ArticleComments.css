@@ -25,8 +25,25 @@
   font-style: italic;
   overflow: scroll;
   font-size: 90%;
+  flex: 5;
 }
 
 .commentAuthor {
   font-weight: bold;
+  display: flex;
+  flex: 1;
+}
+
+.deleteCommentButton {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: lightcoral;
+  padding: 0px;
+  margin: 0px;
+}
+.deleteCommentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

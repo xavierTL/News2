@@ -27,7 +27,7 @@ class App extends Component {
   };
   render() {
     const { topics, users, user } = this.state;
-    const { username } = user;
+    const { username, user_id } = user;
     return (
       <Auth users={users} setUser={this.setUser} user={user}>
         <div className="App">
@@ -36,10 +36,14 @@ class App extends Component {
             <Router className="center">
               <Home path="/*" />
               <ArticlesByTopicDisplay username={username} path="topics/:slug" />
-              <ArticleDisplay path="articles/:id" />
+              <ArticleDisplay
+                path="articles/:id"
+                user_id={user_id}
+                username={username}
+              />
               <NewTopic path="newTopic" />
             </Router>
-            <SideBar username={username} />
+            <SideBar username={username} topics={topics} />
           </div>
         </div>
       </Auth>

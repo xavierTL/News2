@@ -3,7 +3,14 @@ import '../styles/buttons.css';
 
 class MoreArticlesButton extends Component {
   render() {
-    return <div className="moreArticles">10 more articles?</div>;
+    return (
+      <div className="moreArticles">
+        <button className="more">
+          <div>more</div>
+          <div className="arrow">v</div>
+        </button>
+      </div>
+    );
   }
 }
 

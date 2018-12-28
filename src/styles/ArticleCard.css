@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
 
 .articleCard {
   height: 200px;
@@ -7,11 +7,12 @@
   flex-direction: column;
   padding: 10px;
   border-radius: 5%;
-  border: solid lightgrey 8px;
+  border: solid white 8px;
   margin: 5px;
-  font-family: Oswald;
+  font-family: Major Mono Display;
   font-size: 25.5 vw;
   color: black;
+  transition: 1s;
 }
 
 .articleCard:hover {
@@ -19,9 +20,16 @@
 }
 
 .cardData {
+  border-top: black solid 1px;
+  padding-top: 5px;
+  margin-top: 5px;
   flex: 1;
-  font-family: 'Oswald', light;
+  font-weight: bold;
 }
-/* .author {
-  text-decoration: underline;
-} */
+.user {
+  font-weight: bold;
+}
+
+.author {
+  color: red;
+}

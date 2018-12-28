@@ -31,3 +31,14 @@ export const fetchUsers = async () => {
   const { data } = await axios.get(`${BASE_URL}users`);
   return data;
 };
+
+export const postComment = async newComment => {
+  const { data } = await axios.post(
+    `${BASE_URL}articles/${newComment.article_id}/comments`,
+    newComment
+  );
+};
+
+export const deleteCommentById = async id => {
+  const { data } = await axios.delete(`${BASE_URL}comments/${id}`);
+};

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
 
 .logo {
   padding: 5px;
@@ -39,13 +39,14 @@
 button {
   border: 0px;
   font-size: 150%;
-  font-family: Oswald;
+  font-family: Major Mono Display;
+  font-weight: bold;
 }
 button:focus {
   outline: 0px;
 }
 button:hover {
-  font-size: 160%;
+  background-color: lightcoral;
 }
 
 #selected {

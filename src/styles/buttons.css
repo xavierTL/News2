@@ -3,8 +3,31 @@
   width: 200px;
   padding: 10px;
   border-radius: 5%;
-  border: solid lightgrey 8px;
+  border: solid white 8px;
   margin: 5px;
-  font-family: Oswald;
   color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.more {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: lightcoral;
+  font-weight: bold;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid lightcoral 1px;
+  transition: 0.25s;
+}
+
+.more:hover {
+  padding-bottom: 10px;
+}
+.arrow {
+  display: none;
 }
