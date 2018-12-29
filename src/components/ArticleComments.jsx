@@ -2,41 +2,38 @@ import React, { Component } from 'react';
 import * as api from '../api/api';
 import '../styles/ArticleComments.css';
 import NewCommentForm from './NewCommentForm';
+import CommentsWheel from './CommentsWheel';
 
 class ArticleComments extends Component {
   state = {
-    comments: []
+    comments: [],
+    show: false
   };
   render() {
     const { username, id, user_id } = this.props;
-    const { comments } = this.state;
+    const { comments, show } = this.state;
     return (
       <>
-        <NewCommentForm
-          id={id}
-          user_id={user_id}
-          forceUpdate={this.forceUpdate}
-        />
-        <div className="commentsContainer">
-          {comments.map(comment => (
-            <div key={comment.comment_id} className="commentContainer">
-              <div className="commentBody">"{comment.body}"</div>
-              <div className="commentAuthor">
-                -{comment.author}
-                {username === comment.author ? (
-                  <div className="deleteCommentContainer">
-                    <button
-                      className="deleteCommentButton"
-                      onClick={() => this.deleteComment(comment.comment_id)}
-                    >
-                      x
-                    </button>
-                  </div>
-                ) : null}
-              </div>
-            </div>
-          ))}
-        </div>
+        <button onClick={() => this.toggleShow()}>
+          {show ? 'HIDE' : 'SHOW'} COMMENTS
+        </button>
+
+        {show ? (
+          <div className={'show'}>
+            <NewCommentForm
+              id={id}
+              user_id={user_id}
+              forceUpdate={this.forceUpdate}
+            />
+            <CommentsWheel
+              comments={comments}
+              deleteComment={this.deleteComment}
+              username={username}
+            />
+          </div>
+        ) : (
+          <div className="hidden" />
+        )}
       </>
     );
   }
@@ -69,6 +66,10 @@ class ArticleComments extends Component {
         }
       });
     });
+  };
+  toggleShow = () => {
+    const { show } = this.state;
+    this.setState({ show: !show });
   };
 }
 

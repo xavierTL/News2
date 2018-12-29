@@ -1,4 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
+
 .sideBarContainer {
   flex: 1;
-  border: solid red 1px;
+  display: flex;
+  flex-direction: column;
+  font-family: Major Mono Display;
+  border-left: solid black 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.linkContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.newLink {
+  width: 100px;
+  height: 100px;
+  background-color: lightcoral;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  font-weight: bolder;
+}
+
+.welcomeContainer {
+  flex: 1;
+  text-align: center;
+}
+.plus {
+  font-size: 300%;
 }

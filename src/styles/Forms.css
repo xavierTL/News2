@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 .commentFormContainer {
   flex: 0.3;
   display: flex;
+  border-top: solid black 1px;
+  border-bottom: solid black 1px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-family: Roboto;
 }
 
 .formInner {
@@ -14,13 +21,22 @@
 }
 
 .inputField {
-  flex: 4;
+  flex: 6;
 }
 .commentField {
   flex: 1;
-  width: 100%;
-  height: 100%;
-  border: solid lightgrey 1px;
+  width: 99%;
+  height: 90%;
+  border: 0px;
+  border-left: solid black 1px;
+}
+.commentField:hover {
+  border: solid black 1px;
+}
+
+.commentField:focus {
+  outline: 0px;
+  border: solid black 1px;
 }
 
 .newCommentHeader {
@@ -28,6 +44,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
 }
 .formOuter {
   flex: 3;
@@ -36,8 +53,8 @@
 
 .submitButton {
   margin-left: 10px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: lightcoral;
   font-weight: bold;
@@ -52,6 +69,23 @@
 
 .submitButton:hover {
   padding-bottom: 10px;
+}
+.submitButton:focus {
+  outline: 0px;
+}
+
+@keyframes flash {
+  from {
+    background-color: lightcoral;
+  }
+  to {
+    background-color: white;
+  }
+}
+
+.flash {
+  animation-name: flash;
+  animation-duration: 1s;
 }
 
 .submitCont {

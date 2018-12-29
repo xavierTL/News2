@@ -42,3 +42,21 @@ export const postComment = async newComment => {
 export const deleteCommentById = async id => {
   const { data } = await axios.delete(`${BASE_URL}comments/${id}`);
 };
+
+export const voteOnArticle = async (articleId, increment) => {
+  const vote = { inc_votes: increment };
+  const { data } = await axios.patch(`${BASE_URL}articles/${articleId}`, vote);
+  return data;
+};
+
+export const postArticle = async (topic, post) => {
+  const { data } = await axios.post(
+    `${BASE_URL}topics/${topic}/articles`,
+    post
+  );
+  return data;
+};
+
+export const deleteArticle = async id => {
+  const { data } = await axios.delete(`${BASE_URL}articles/${id}`);
+};

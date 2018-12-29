@@ -2,8 +2,9 @@ import React from 'react';
 import '../styles/ArticleContent.css';
 import moment from 'moment';
 import { Textfit } from 'react-textfit';
+import Voter from './/Voter';
 
-const ArticleContent = ({ article }) => {
+const ArticleContent = ({ article, toggleVotes }) => {
   const { title, author, body, comment_count, votes, created_at } = article;
   const m = moment(created_at).calendar();
   return (
@@ -14,11 +15,14 @@ const ArticleContent = ({ article }) => {
             {title}
           </Textfit>
         </div>
-        <div className="author">- {`posted by "${author}", ${m}`} </div>
       </div>
       <div className="articleBody">{body}</div>
       <div className="articleData">
-        {`${votes} votes, ${comment_count} comments.`}
+        <Voter toggleVotes={toggleVotes} />
+        <div className="innerData">
+          {' '}
+          {`posted by "${author}", ${m}, ${votes} votes, ${comment_count} comments.`}{' '}
+        </div>
       </div>
     </div>
   );

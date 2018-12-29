@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC');
 @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 .articleContent {
   flex: 3;
   display: flex;
   flex-direction: column;
-  font-family: Major Mono Display;
+  font-family: Roboto;
 }
 
 .articleHeader {
@@ -14,6 +14,7 @@
   width: 100%;
   flex: 4;
   display: flex;
+  font-family: Major Mono Display;
 }
 .author {
   padding-top: 10px;
@@ -28,11 +29,22 @@
 }
 
 .articleBody {
-  font-size: 80%;
+  font-size: 100%;
   flex: 6;
+  font-family: Roboto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
 }
 
 .articleData {
   display: flex;
   flex: 0.5;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px;
+}
+.innerData {
+  font-style: italic;
 }
