@@ -7,15 +7,16 @@ import CommentsWheel from './CommentsWheel';
 class ArticleComments extends Component {
   state = {
     comments: [],
-    show: false
+    show: false,
+    hasResponded: false
   };
   render() {
     const { username, id, user_id } = this.props;
-    const { comments, show } = this.state;
+    const { comments, show, hasResponded } = this.state;
     return (
       <>
         <button onClick={() => this.toggleShow()}>
-          {show ? 'HIDE' : 'SHOW'} COMMENTS
+          {show ? 'Hide' : 'Show'} Comments
         </button>
 
         {show ? (
@@ -29,18 +30,17 @@ class ArticleComments extends Component {
               comments={comments}
               deleteComment={this.deleteComment}
               username={username}
+              hasResponded={hasResponded}
             />
           </div>
-        ) : (
-          <div className="hidden" />
-        )}
+        ) : null}
       </>
     );
   }
   componentDidMount() {
     api.fetchComments(this.props.id).then(response => {
       if (response) {
-        this.setState({ comments: response.body });
+        this.setState({ comments: response.body, hasResponded: true });
       }
     });
   }
@@ -54,7 +54,7 @@ class ArticleComments extends Component {
   forceUpdate = () => {
     api.fetchComments(this.props.id).then(response => {
       if (response) {
-        this.setState({ comments: response.body });
+        this.setState({ comments: response.body, hasResponded: true });
       }
     });
   };
@@ -62,7 +62,7 @@ class ArticleComments extends Component {
     api.deleteCommentById(id).then(() => {
       api.fetchComments(this.props.id).then(response => {
         if (response) {
-          this.setState({ comments: response.body });
+          this.setState({ comments: response.body, hasResponded: true });
         }
       });
     });

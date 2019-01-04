@@ -10,7 +10,15 @@
 
 .hidden {
   flex: 1;
-  opacity: 0;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.commentIcon {
+  height: 40px;
+  width: auto;
 }
 .commentsContainer {
   flex: 1;
@@ -61,4 +69,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.noCommentCont {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noComment {
 }

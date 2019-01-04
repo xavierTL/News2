@@ -6,9 +6,11 @@ class NewCommentForm extends Component {
   state = {
     body: '',
     newCommentId: null,
-    i: 0
+    isFlashing: false,
+    isPosting: false
   };
   render() {
+    const { isPosting, isFlashing, body } = this.state;
     return (
       <div className="commentFormContainer">
         <>
@@ -21,21 +23,21 @@ class NewCommentForm extends Component {
                 <div className="inputField">
                   <label>
                     <input
-                      className={`commentField ${
-                        this.state.i > 0 ? 'flash' : null
-                      }`}
+                      className={`commentField ${isFlashing ? 'flash' : null}`}
                       id="body"
                       type="text"
-                      value={this.state.body}
+                      value={body}
                       onChange={this.handleChange}
                     />
                   </label>
                 </div>
-                <div className="submitCont">
+                <div className={`submitCont`}>
                   <input
-                    className={`submitButton`}
+                    className={`submitButton ${
+                      isPosting ? 'postLoader' : null
+                    }`}
                     type="submit"
-                    value="TROLL"
+                    value={isPosting ? ' ' : 'POST'}
                   />
                 </div>
               </div>
@@ -47,6 +49,8 @@ class NewCommentForm extends Component {
   }
   handleChange = event => {
     const { value } = event.target;
+    const { body } = this.state;
+    if (body.length) this.setState({ isFlashing: false });
     this.setState({ body: value });
   };
   handleSubmit = event => {
@@ -55,10 +59,14 @@ class NewCommentForm extends Component {
     if (body.length) {
       const { id, user_id, forceUpdate } = this.props;
       const newComment = { article_id: id, user_id, body };
-      api.postComment(newComment).then(() => forceUpdate());
+      this.setState({ isPosting: true });
+      api.postComment(newComment).then(() => {
+        forceUpdate();
+        this.setState({ isPosting: false });
+      });
     } else {
       const { i } = this.state;
-      this.setState({ i: i + 1 });
+      this.setState({ isFlashing: true });
     }
   };
 }

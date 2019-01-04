@@ -6,7 +6,7 @@ import ArticlesByTopicDisplay from './components/ArticlesByTopicDisplay';
 import { Router } from '@reach/router';
 import * as api from './api/api';
 import ArticleDisplay from './components/ArticleDisplay';
-import NewTopic from './components/NewTopic';
+import NewArticle from './components/NewArticle';
 import Auth from './components/Auth';
 import Home from './components/Home';
 
@@ -41,7 +41,7 @@ class App extends Component {
                 user_id={user_id}
                 username={username}
               />
-              <NewTopic path="newTopic" />
+              <NewArticle path="publish" user_id={user_id} topics={topics} />
             </Router>
             <SideBar username={username} topics={topics} />
           </div>

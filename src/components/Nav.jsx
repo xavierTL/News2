@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/Nav.css';
 import '../styles/App.css';
 import { Link } from '@reach/router';
+import * as utils from '../utils';
 
 class Nav extends Component {
   state = { select: null };
@@ -17,15 +18,20 @@ class Nav extends Component {
           />
         </div>
         <div className="topicsContainer">
+          <h2 className="topicHead">TOPICS</h2>
           {topics.map(topic => (
             <div key={topic.slug} className="topicContainer topicButtons">
-              <Link to={`/topics/${topic.slug}`} className="topicButton">
+              <Link
+                to={`/topics/${topic.slug}`}
+                className="topicButton"
+                style={{ textDecoration: 'none', color: 'black' }}
+              >
                 <button
                   className="inner"
                   id={this.state.select === topic.slug ? 'selected' : null}
                   onClick={() => this.toggleActive(topic.slug)}
                 >
-                  {topic.slug.toUpperCase()}
+                  {utils.capitliseFirst(topic.slug)}
                 </button>
               </Link>
             </div>

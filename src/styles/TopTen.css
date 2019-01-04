@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
+
+.topTenOuter {
+  flex: 3;
+  font-family: Roboto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerUl {
+  overflow: scroll;
+  flex: 3;
+}
+
+.topTenUl {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.topTenLi {
+  font-size: 70%;
+  font-weight: 900;
+  margin: 2px;
+}
+.containerLi {
+  margin: 4px;
+  display: flex;
+}
+.titleTenContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1;
+  font-family: Major Mono Display;
+  font-weight: 900;
+}
+
+.titleTenInner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightcoral;
+  margin: 3px;
+  border-radius: 15%;
+  width: 80px;
+  height: 80px;
+}

@@ -13,25 +13,42 @@
 .linkContainer {
   flex: 1;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .newLink {
-  width: 100px;
-  height: 100px;
-  background-color: lightcoral;
-  border-radius: 10%;
+  width: 80px;
+  height: 80px;
+  background-color: #f08080;
+  border-radius: 20%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
   flex-direction: column;
   font-weight: bolder;
+  border: solid white 8px;
+  transition: 0.5s;
+}
+.linkText {
+}
+.newLink:hover {
+  border: solid darkgrey 8px;
 }
 
 .welcomeContainer {
-  flex: 1;
+  flex: 0.2;
   text-align: center;
+  font-weight: bold;
+  border-bottom: solid black 1px;
+  margin: 5px;
 }
 .plus {
   font-size: 300%;
+}
+
+.userName {
+  color: lightcoral;
+  font-style: italic;
 }

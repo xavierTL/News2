@@ -3,9 +3,10 @@ import '../styles/buttons.css';
 
 class MoreArticlesButton extends Component {
   render() {
+    const { paginate } = this.props;
     return (
       <div className="moreArticles">
-        <button className="more">
+        <button className="more" onClick={() => paginate()}>
           <div>more</div>
           <div className="arrow">v</div>
         </button>

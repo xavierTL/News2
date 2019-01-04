@@ -8,34 +8,26 @@
   font-family: Roboto;
 }
 
-.articleHeader {
-  font-weight: bold;
-  text-decoration: underline;
-  width: 100%;
-  flex: 4;
-  display: flex;
-  font-family: Major Mono Display;
-}
 .author {
   padding-top: 10px;
   font-style: italic;
   flex: 1;
 }
 .articleTop {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  flex: 2;
+  font-weight: bold;
+  height: 150px;
+  text-decoration: underline;
+  font-family: Major Mono Display;
+  text-align: center;
 }
 
 .articleBody {
   font-size: 100%;
   flex: 6;
   font-family: Roboto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   padding: 10px;
+  border-bottom: solid black 1px;
+  overflow: scroll;
 }
 
 .articleData {
@@ -47,4 +39,15 @@
 }
 .innerData {
   font-style: italic;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.nothingHere {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

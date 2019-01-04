@@ -6,22 +6,49 @@ import '../styles/ArticleDisplay.css';
 
 class ArticleDisplay extends Component {
   state = {
-    article: {}
+    article: {},
+    responded: false
   };
   render() {
     const { id, user_id, username } = this.props;
-    const { article } = this.state;
+    const { article, responded } = this.state;
     return (
       <div className="articleDisplay">
-        <ArticleContent article={article} toggleVotes={this.toggleVotes} />
-        <ArticleComments id={id} username={username} user_id={user_id} />
+        {article.title ? (
+          <>
+            <ArticleContent
+              article={article}
+              toggleVotes={this.toggleVotes}
+              username={username}
+              deleteArticle={this.deleteArticle}
+            />
+
+            <ArticleComments id={id} username={username} user_id={user_id} />
+          </>
+        ) : (
+          <div className="nothingHere">
+            <div className="nothingHereMessage">
+              {responded ? 'be the first to post!' : 'loading...'}
+            </div>
+          </div>
+        )}
       </div>
     );
   }
+
   componentDidMount() {
-    api.fetchArticleById(this.props.id).then(article => {
-      this.setState({ article });
+    api.fetchArticleById(this.props.id).then(response => {
+      this.setState({ article: response, responded: true });
     });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.id !== this.props.id) {
+      console.log(this.props.id);
+      api.fetchArticles(this.props.id).then(response => {
+        this.setState({ article: response, responded: true });
+      });
+    }
   }
   toggleVotes = increment => {
     const { article_id } = this.state.article;
@@ -30,6 +57,10 @@ class ArticleDisplay extends Component {
       newVersion.votes = response.updatedArticle[0].votes;
       this.setState({ article: newVersion, hasVoted: true });
     });
+  };
+  deleteArticle = id => {
+    const blank = {};
+    api.deleteArticle(id).then(() => this.setState({ article: blank }));
   };
 }
 

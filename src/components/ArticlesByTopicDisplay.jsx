@@ -7,7 +7,8 @@ import ArticleController from './ArticleController';
 
 class ArticlesByTopicDisplay extends Component {
   state = {
-    articles: []
+    articles: [],
+    p: 10
   };
   render() {
     const { articles } = this.state;
@@ -16,15 +17,23 @@ class ArticlesByTopicDisplay extends Component {
       <div className="artsCont">
         <ArticleController toggleSort={this.toggleSort} />
         <div className="articlesByTopic">
-          {articles.map((article, index) => (
-            <ArticleCard
-              username={username}
-              key={article.article_id}
-              article={article}
-              index={index}
-            />
-          ))}
-          <MoreArticlesButton />
+          {articles.length ? (
+            <>
+              {articles.map((article, index) => (
+                <ArticleCard
+                  username={username}
+                  key={article.article_id}
+                  article={article}
+                  index={index}
+                />
+              ))}
+              <MoreArticlesButton paginate={this.paginate} />
+            </>
+          ) : (
+            <div className="nothingHere">
+              <div className="nothingHereMessage">{`loading...`}</div>
+            </div>
+          )}
         </div>
       </div>
     );
@@ -37,7 +46,7 @@ class ArticlesByTopicDisplay extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps.slug !== this.props.slug) {
       api.fetchArticles(this.props.slug).then(response => {
-        this.setState({ articles: response.articles });
+        this.setState({ articles: response.articles, p: 10 });
       });
     }
   }
@@ -45,6 +54,16 @@ class ArticlesByTopicDisplay extends Component {
     api.fetchArticles(this.props.slug, criteria).then(response => {
       this.setState({ articles: response.articles });
     });
+  };
+
+  paginate = () => {
+    const copy = [...this.state.articles];
+    const { p } = this.state;
+    if (copy.length === p) {
+      api.fetchArticles(this.props.slug, null, p).then(response => {
+        this.setState({ articles: copy.concat(response.articles), p: p + 10 });
+      });
+    }
   };
 }
 

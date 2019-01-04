@@ -6,16 +6,22 @@ export const fetchTopics = async () => {
   return data.topics;
 };
 
-export const fetchArticles = async (topic, searchCriteria) => {
+export const fetchArticles = async (topic, searchCriteria, p) => {
   const query = searchCriteria ? `?criteria=${searchCriteria}` : '';
-  const URL = `${BASE_URL}topics/${topic}/articles${query}`;
+  const paginate = p ? `?p=${p}` : '';
+  const URL = `${BASE_URL}topics/${topic}/articles${query + paginate}`;
   const { data } = await axios.get(URL);
   return data;
 };
 
 export const fetchArticleById = async articleId => {
-  const { data } = await axios.get(`${BASE_URL}articles/${articleId}`);
-  return data.article[0];
+  try {
+    const { data } = await axios.get(`${BASE_URL}articles/${articleId}`);
+    return data.article[0];
+  } catch (err) {
+    console.log(err);
+    return err;
+  }
 };
 
 export const fetchComments = async articleId => {
@@ -37,10 +43,12 @@ export const postComment = async newComment => {
     `${BASE_URL}articles/${newComment.article_id}/comments`,
     newComment
   );
+  return data;
 };
 
 export const deleteCommentById = async id => {
   const { data } = await axios.delete(`${BASE_URL}comments/${id}`);
+  return data;
 };
 
 export const voteOnArticle = async (articleId, increment) => {
@@ -59,4 +67,11 @@ export const postArticle = async (topic, post) => {
 
 export const deleteArticle = async id => {
   const { data } = await axios.delete(`${BASE_URL}articles/${id}`);
+  return data;
+};
+
+export const fetchTopTen = async () => {
+  const URL = `${BASE_URL}/articles?criteria=votes`;
+  const { data } = await axios.get(URL);
+  return data;
 };

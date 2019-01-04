@@ -35,6 +35,7 @@
 }
 
 .voter {
+  width: 150px;
   font-family: Roboto;
   display: flex;
   flex-direction: row;
@@ -46,13 +47,21 @@
 }
 .voteContainer,
 .vote {
-  flex: 1;
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   font-style: none;
   padding: 3px;
 }
+
+.voteContainer {
+  flex: 1;
+}
+
+.vote {
+  flex: 2;
+}
+
 .voteButton {
   width: 25px;
   height: 25px;
@@ -68,4 +77,8 @@
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+.deleter {
+  font-size: 20px;
 }

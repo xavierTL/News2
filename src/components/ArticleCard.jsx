@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../styles/ArticleCard.css';
 import { Link } from '@reach/router';
 import { Textfit } from 'react-textfit';
+import * as utils from '../utils';
 
 class ArticleCard extends Component {
   render() {
@@ -17,7 +18,7 @@ class ArticleCard extends Component {
       <Link to={`/articles/${article_id}`} style={{ textDecoration: 'none' }}>
         <div className={`articleCard`}>
           <Textfit style={{ height: '150px' }} mode="multi" max={70}>
-            {title}
+            {utils.capitliseFirst(title)}
           </Textfit>
           <div className="cardData">
             <div className={`author ${username === author ? 'user' : null}`}>
