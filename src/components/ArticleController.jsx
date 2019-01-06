@@ -7,7 +7,6 @@ class ArticleController extends Component {
     const { toggleSort } = this.props;
     return (
       <div className="controlContainer">
-        BUILD ASC/DESC NEXT
         <Sorter toggleSort={toggleSort} />
       </div>
     );

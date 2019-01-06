@@ -14,6 +14,7 @@ class Sorter extends Component {
               <option value="title">Title</option>
               <option value="votes">Popularity</option>
               <option value="created_at">Recent</option>
+              <option value="comment_count">Comments</option>
             </select>
           </label>
           <input type="submit" value="Submit" />
