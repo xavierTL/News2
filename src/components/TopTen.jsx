@@ -12,21 +12,33 @@ class TopTen extends Component {
     return (
       <div className="topTenOuter">
         <div className="titleTenContainer">
-          <div className="titleTenInner">Top 10!</div>
+          <div className="titleTenInner">
+            Popular articles
+            <img
+              className="commentIcon trendIcon"
+              src={require('../images/trend.svg')}
+              alt="comment icon"
+            />
+          </div>
         </div>
         <div className="containerUl">
           <ul className="topTenUl">
             {topTen.map((article, i) => (
               <div key={i} className="containerLi">
-                <div> {i + 1} </div>
-                <li className="topTenLi">
-                  <Link
-                    to={`/articles/${article.article_id}`}
-                    style={{ textDecoration: 'none', color: 'black' }}
-                  >
-                    {article.title}
-                  </Link>
-                </li>
+                <div className="itemNumberCont">
+                  {' '}
+                  <div className="itemNumber">{i + 1}</div>{' '}
+                </div>
+                <div className="itemTitle">
+                  <li className="topTenLi">
+                    <Link
+                      to={`/articles/${article.article_id}`}
+                      style={{ textDecoration: 'none', color: 'black' }}
+                    >
+                      {article.title}
+                    </Link>
+                  </li>
+                </div>
               </div>
             ))}
           </ul>

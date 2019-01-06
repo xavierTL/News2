@@ -65,7 +65,6 @@ class NewCommentForm extends Component {
         this.setState({ isPosting: false });
       });
     } else {
-      const { i } = this.state;
       this.setState({ isFlashing: true });
     }
   };

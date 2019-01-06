@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   font-family: Major Mono Display;
-  border-left: solid black 1px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -27,14 +26,21 @@
   justify-content: space-evenly;
   text-align: center;
   flex-direction: column;
-  font-weight: bolder;
-  border: solid white 8px;
+  font-weight: 900;
   transition: 0.5s;
-}
-.linkText {
+  font-size: 90%;
 }
 .newLink:hover {
-  border: solid darkgrey 8px;
+  animation-name: wiggle-rotation;
+  animation-iteration-count: 5;
+  animation-duration: 1s;
+}
+
+@keyframes wiggle-rotation {
+  100% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
 }
 
 .welcomeContainer {

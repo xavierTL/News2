@@ -8,7 +8,6 @@ class MoreArticlesButton extends Component {
       <div className="moreArticles">
         <button className="more" onClick={() => paginate()}>
           <div>more</div>
-          <div className="arrow">v</div>
         </button>
       </div>
     );

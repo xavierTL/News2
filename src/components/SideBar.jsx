@@ -10,7 +10,6 @@ class SideBar extends Component {
     return (
       <div className="sideBarContainer">
         <div className="welcomeContainer">
-          <p>welcome back,</p>
           <p className="userName">{username.toUpperCase()},</p>
           <p>what do you want to do?</p>
         </div>
@@ -19,12 +18,12 @@ class SideBar extends Component {
             to="/publish"
             style={{ textDecoration: 'none', color: 'black' }}
           >
-            <SideLink text={'Article'} img={'idea.svg'} />
+            <SideLink text={'new Article'} img={'idea.svg'} />
           </Link>
         </div>
         <div className="linkContainer">
           <Link to="/topic" style={{ textDecoration: 'none', color: 'black' }}>
-            <SideLink text={'Topic'} img={'topic.svg'} />
+            <SideLink text={'new Topic'} img={'topic.svg'} />
           </Link>
         </div>
         <TopTen />

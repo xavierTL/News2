@@ -35,6 +35,7 @@
   width: 22%;
   height: 130px;
   margin-right: 5px;
+  margin-top: 5px;
   overflow: scroll;
   display: flex;
   flex-direction: column;

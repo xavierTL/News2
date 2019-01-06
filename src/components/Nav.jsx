@@ -11,11 +11,21 @@ class Nav extends Component {
     return (
       <div className="navContainer">
         <div className="header">
-          <img
-            className="logo"
-            alt="logo"
-            src={require('../images/icon.svg')}
-          />
+          <Link
+            to={`/home`}
+            style={{
+              textDecoration: 'none',
+              width: '100%',
+              height: '100%',
+              display: 'flex'
+            }}
+          >
+            <img
+              className="logo"
+              alt="logo"
+              src={require('../images/icon.svg')}
+            />
+          </Link>
         </div>
         <div className="topicsContainer">
           <h2 className="topicHead">TOPICS</h2>

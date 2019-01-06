@@ -26,7 +26,7 @@ export const fetchArticleById = async articleId => {
 export const fetchComments = async articleId => {
   if (articleId) {
     const { data } = await axios.get(
-      `${BASE_URL}articles/${articleId}/comments?limit=30`
+      `${BASE_URL}articles/${articleId}/comments?limit=30&&criteria=created_at`
     );
     return data;
   }

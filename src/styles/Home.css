@@ -1,0 +1,28 @@
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  font-family: Major Mono Display;
+}
+.homeIcon {
+  width: 100px;
+}
+
+.homeText,
+.homeIconCont {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.homeText {
+}
+
+.homeCenter {
+  width: 50%;
+  height: 50%;
+  display: flex;
+}

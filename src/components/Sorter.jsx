@@ -24,7 +24,7 @@ class Sorter extends Component {
             </label>
           </div>
           <div className="submitContainer">
-            <input type="submit" value="Submit" className="submit" />
+            <input type="submit" value="Sort" className="submit" />
           </div>
         </form>
       </div>

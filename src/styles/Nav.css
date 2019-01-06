@@ -3,6 +3,7 @@
 
 .logo {
   padding: 5px;
+  width: 100%;
 }
 
 .header {
@@ -48,9 +49,12 @@
   font-weight: 900;
 }
 
-button,
-select,
 input {
+  border: 0px;
+}
+
+button,
+select {
   border: 0px;
   font-family: Major Mono Display;
 }
