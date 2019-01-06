@@ -8,8 +8,9 @@ import ArticleController from './ArticleController';
 class ArticlesByTopicDisplay extends Component {
   state = {
     articles: [],
-    p: 10,
-    isASC: true
+    p: 0,
+    isASC: true,
+    criteria: 'title'
   };
   render() {
     const { articles, isASC } = this.state;
@@ -44,15 +45,24 @@ class ArticlesByTopicDisplay extends Component {
     );
   }
   componentDidMount() {
-    const { isASC } = this.state;
-    api.fetchArticles(this.props.slug, { isASC }).then(response => {
-      this.setState({ articles: response.articles });
+    this.setState({ p: 0 }, () => {
+      const { isASC, criteria, p } = this.state;
+      api
+        .fetchArticles(this.props.slug, { isASC, criteria, p })
+        .then(response => {
+          this.setState({ articles: response.articles });
+        });
     });
   }
   componentDidUpdate(prevProps) {
     if (prevProps.slug !== this.props.slug) {
-      api.fetchArticles(this.props.slug, {}).then(response => {
-        this.setState({ articles: response.articles, p: 10 });
+      this.setState({ p: 0, isASC: true, criteria: 'title' }, () => {
+        const { p, isASC, criteria } = this.state;
+        api
+          .fetchArticles(this.props.slug, { isASC, criteria, p })
+          .then(response => {
+            this.setState({ articles: response.articles });
+          });
       });
     }
   }
@@ -62,19 +72,29 @@ class ArticlesByTopicDisplay extends Component {
   };
 
   toggleSort = criteria => {
-    const { isASC } = this.state;
-
-    api.fetchArticles(this.props.slug, { criteria, isASC }).then(response => {
-      this.setState({ articles: response.articles });
+    this.setState({ criteria, p: 0 }, () => {
+      const { isASC, criteria, p } = this.state;
+      api
+        .fetchArticles(this.props.slug, { criteria, isASC, p })
+        .then(response => {
+          this.setState({ articles: response.articles });
+        });
     });
   };
 
   paginate = () => {
     const copy = [...this.state.articles];
-    const { p, isASC } = this.state;
-    if (copy.length === p) {
-      api.fetchArticles(this.props.slug, { p, isASC }).then(response => {
-        this.setState({ articles: copy.concat(response.articles), p: p + 10 });
+    const { p, isASC, criteria } = this.state;
+    if (copy.length % 10 === 0) {
+      this.setState({ p: p + 10 }, () => {
+        const { p } = this.state;
+        api
+          .fetchArticles(this.props.slug, { p, isASC, criteria })
+          .then(response => {
+            this.setState({
+              articles: copy.concat(response.articles)
+            });
+          });
       });
     }
   };

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
+import '../styles/controller.css';
 
 class Sorter extends Component {
   state = {
-    option: ''
+    option: 'title'
   };
   render() {
     return (
-      <div>
+      <div className="sortContainer">
         <form onSubmit={this.handleSubmit}>
           <label>
-            Sort by...
             <select value={this.state.value} onChange={this.handleChange}>
               <option value="title">Title</option>
               <option value="votes">Popularity</option>
@@ -17,7 +17,7 @@ class Sorter extends Component {
               <option value="comment_count">Comments</option>
             </select>
           </label>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" className="submit" />
         </form>
       </div>
     );

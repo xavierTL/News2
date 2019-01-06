@@ -7,12 +7,8 @@ export const fetchTopics = async () => {
 };
 
 export const fetchArticles = async (topic, options) => {
-  console.log(options);
-  const query = options.criteria ? `?criteria=${options.criteria}` : '';
-  const paginate = options.p ? `?p=${options.p}` : '';
-  const link = options.criteria ? '&&' : '?';
-  const URL = `${BASE_URL}topics/${topic}/articles${query +
-    paginate}${link}sort_ascending=${options.isASC}`;
+  const { isASC, criteria, p } = options;
+  const URL = `${BASE_URL}topics/${topic}/articles?criteria=${criteria}&&p=${p}&&sort_ascending=${isASC}`;
   const { data } = await axios.get(URL);
   return data;
 };

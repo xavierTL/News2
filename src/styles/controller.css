@@ -1,8 +1,22 @@
 .controlContainer {
   flex: 0.3;
   width: 100%;
-  font-family: Oswald;
   color: black;
   display: flex;
+}
+
+.ascContainer {
+  flex: 1;
   border: solid red 1px;
+  display: flex;
+  justify-content: center;
+}
+
+.sortContainer {
+  flex: 2;
+  border: solid red 1px;
+}
+
+.ascButton {
+  width: 100%;
 }

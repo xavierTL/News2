@@ -8,9 +8,11 @@ class ArticleController extends Component {
     return (
       <div className="controlContainer">
         <Sorter toggleSort={toggleSort} />
-        <button onClick={() => toggleAscending()}>
-          {isASC ? 'A asc' : 'V desc'}
-        </button>
+        <div className="ascContainer">
+          <button className="ascButton" onClick={() => toggleAscending()}>
+            {isASC ? 'A asc' : 'V desc'}
+          </button>
+        </div>
       </div>
     );
   }
