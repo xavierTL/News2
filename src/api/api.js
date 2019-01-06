@@ -6,10 +6,13 @@ export const fetchTopics = async () => {
   return data.topics;
 };
 
-export const fetchArticles = async (topic, searchCriteria, p) => {
-  const query = searchCriteria ? `?criteria=${searchCriteria}` : '';
-  const paginate = p ? `?p=${p}` : '';
-  const URL = `${BASE_URL}topics/${topic}/articles${query + paginate}`;
+export const fetchArticles = async (topic, options) => {
+  console.log(options);
+  const query = options.criteria ? `?criteria=${options.criteria}` : '';
+  const paginate = options.p ? `?p=${options.p}` : '';
+  const link = options.criteria ? '&&' : '?';
+  const URL = `${BASE_URL}topics/${topic}/articles${query +
+    paginate}${link}sort_ascending=${options.isASC}`;
   const { data } = await axios.get(URL);
   return data;
 };

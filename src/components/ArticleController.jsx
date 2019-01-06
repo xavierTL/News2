@@ -4,10 +4,13 @@ import Sorter from './Sorter';
 
 class ArticleController extends Component {
   render() {
-    const { toggleSort } = this.props;
+    const { toggleSort, toggleAscending, isASC } = this.props;
     return (
       <div className="controlContainer">
         <Sorter toggleSort={toggleSort} />
+        <button onClick={() => toggleAscending()}>
+          {isASC ? 'A asc' : 'V desc'}
+        </button>
       </div>
     );
   }
