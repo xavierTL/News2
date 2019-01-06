@@ -7,7 +7,8 @@ import '../styles/ArticleDisplay.css';
 class ArticleDisplay extends Component {
   state = {
     article: {},
-    responded: false
+    responded: false,
+    hasVoted: false
   };
   render() {
     const { id, user_id, username } = this.props;
@@ -28,7 +29,7 @@ class ArticleDisplay extends Component {
         ) : (
           <div className="nothingHere">
             <div className="nothingHereMessage">
-              {responded ? 'be the first to post!' : 'loading...'}
+              {responded ? 'nothing here!' : 'loading...'}
             </div>
           </div>
         )}
@@ -52,11 +53,14 @@ class ArticleDisplay extends Component {
   }
   toggleVotes = increment => {
     const { article_id } = this.state.article;
-    const newVersion = { ...this.state.article };
-    api.voteOnArticle(article_id, increment).then(response => {
-      newVersion.votes = response.updatedArticle[0].votes;
-      this.setState({ article: newVersion, hasVoted: true });
-    });
+    const { hasVoted } = this.state;
+    if (!hasVoted) {
+      const newVersion = { ...this.state.article };
+      api.voteOnArticle(article_id, increment).then(response => {
+        newVersion.votes = response.updatedArticle[0].votes;
+        this.setState({ article: newVersion, hasVoted: true });
+      });
+    }
   };
   deleteArticle = id => {
     const blank = {};

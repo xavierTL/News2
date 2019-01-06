@@ -18,10 +18,10 @@
 }
 
 .newLink {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   background-color: #f08080;
-  border-radius: 20%;
+  border-radius: 50%;
   display: flex;
   justify-content: space-evenly;
   text-align: center;

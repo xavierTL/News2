@@ -17,7 +17,7 @@
   height: 90px;
   border-radius: 50%;
   background-color: lightcoral;
-  font-weight: bold;
+  font-weight: 900;
   padding: 0px;
   display: flex;
   flex-direction: column;
@@ -25,11 +25,13 @@
   justify-content: center;
   border: solid lightcoral 1px;
   transition: 0.25s;
-  font-size: 100%;
+  font-size: 130%;
 }
 
 .more:hover {
-  padding-bottom: 10px;
+  animation-name: wiggle-rotation;
+  animation-iteration-count: 5;
+  animation-duration: 0.3s;
 }
 
 .voter {
