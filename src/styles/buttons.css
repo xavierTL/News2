@@ -30,9 +30,6 @@
 .more:hover {
   padding-bottom: 10px;
 }
-.arrow {
-  display: none;
-}
 
 .voter {
   width: 150px;
@@ -68,6 +65,7 @@
   border-radius: 50%;
   padding: 0px;
   background-color: lightcoral;
+  font-size: 120%;
 }
 
 .inner {

@@ -15,7 +15,7 @@ class ArticleComments extends Component {
     const { comments, show, hasResponded } = this.state;
     return (
       <>
-        <button onClick={() => this.toggleShow()}>
+        <button onClick={() => this.toggleShow()} className="button-one">
           {show ? 'Hide' : 'Show'} Comments
         </button>
 

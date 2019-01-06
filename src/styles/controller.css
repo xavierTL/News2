@@ -1,22 +1,47 @@
-.controlContainer {
+.controlOuter {
   flex: 0.3;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.controlContainer {
+  flex: 0.5;
   color: black;
   display: flex;
+  border-bottom: solid black 1px;
 }
 
 .ascContainer {
   flex: 1;
-  border: solid red 1px;
   display: flex;
   justify-content: center;
 }
 
 .sortContainer {
   flex: 2;
-  border: solid red 1px;
+  display: flex;
+}
+.sortForm {
+  display: flex;
+  flex: 1;
 }
 
-.ascButton {
+.ascButton,
+.submit,
+.select {
   width: 100%;
+  font-size: 100%;
+}
+.selectContainer,
+.submitContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.selectLabel,
+.select {
+  flex: 1;
+  height: 100%;
+  background-color: white;
 }
