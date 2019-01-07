@@ -19,6 +19,8 @@
   text-decoration: underline;
   font-family: Major Mono Display;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .articleBody {

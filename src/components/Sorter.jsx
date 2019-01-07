@@ -16,15 +16,15 @@ class Sorter extends Component {
                 onChange={this.handleChange}
                 className="select"
               >
-                <option value="title">Title</option>
-                <option value="votes">Popularity</option>
-                <option value="created_at">Recent</option>
-                <option value="comment_count">Comments</option>
+                <option value="title">title</option>
+                <option value="votes">popularity</option>
+                <option value="created_at">recent</option>
+                <option value="comment_count">comments</option>
               </select>
             </label>
           </div>
           <div className="submitContainer">
-            <input type="submit" value="Sort" className="submit" />
+            <input type="submit" value="sort" className="submit" />
           </div>
         </form>
       </div>

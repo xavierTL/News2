@@ -19,6 +19,7 @@
   flex-direction: column;
 }
 .topicHead {
+  font-size: 160%;
   height: 50px;
   display: flex;
   font-family: Major Mono Display;
@@ -45,7 +46,7 @@
 .inner {
   height: 100%;
   width: 100%;
-  font-size: 100%;
+  font-size: 120%;
   font-weight: 900;
 }
 

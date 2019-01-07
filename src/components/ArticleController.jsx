@@ -11,7 +11,7 @@ class ArticleController extends Component {
           <Sorter toggleSort={toggleSort} />
           <div className="ascContainer">
             <button className="ascButton" onClick={() => toggleAscending()}>
-              {isASC ? 'Ascending' : 'Descending'}
+              {isASC ? 'ascending' : 'descending'}
             </button>
           </div>
         </div>

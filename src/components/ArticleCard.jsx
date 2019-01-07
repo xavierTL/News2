@@ -18,7 +18,7 @@ class ArticleCard extends Component {
       <Link to={`/articles/${article_id}`} style={{ textDecoration: 'none' }}>
         <div className={`articleCard`}>
           <Textfit style={{ height: '150px' }} mode="multi" max={70}>
-            {utils.capitliseFirst(title)}
+            {title.toLowerCase()}
           </Textfit>
           <div className="cardData">
             <div className={`author ${username === author ? 'user' : null}`}>

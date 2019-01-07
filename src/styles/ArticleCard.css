@@ -13,6 +13,7 @@
   font-size: 25.5 vw;
   color: black;
   transition: 1s;
+  font-weight: 900;
 }
 
 .articleCard:hover {
@@ -24,7 +25,7 @@
   padding-top: 5px;
   margin-top: 5px;
   flex: 1;
-  font-weight: bold;
+  font-family: Roboto;
 }
 .user {
   font-weight: bold;

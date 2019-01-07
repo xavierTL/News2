@@ -28,9 +28,9 @@ class Nav extends Component {
           </Link>
         </div>
         <div className="topicsContainer">
-          <h2 className="topicHead">TOPICS</h2>
+          <h2 className="topicHead">topics</h2>
           {topics.map(topic => (
-            <div key={topic.slug} className="topicContainer topicButtons">
+            <div key={topic.slug} className="topicButtons">
               <Link
                 to={`/topics/${topic.slug}`}
                 className="topicButton"
@@ -41,7 +41,7 @@ class Nav extends Component {
                   id={this.state.select === topic.slug ? 'selected' : null}
                   onClick={() => this.toggleActive(topic.slug)}
                 >
-                  {utils.capitliseFirst(topic.slug)}
+                  {topic.slug.toLowerCase()}
                 </button>
               </Link>
             </div>

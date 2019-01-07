@@ -20,8 +20,8 @@ const ArticleContent = ({ article, toggleVotes, username, deleteArticle }) => {
   return (
     <div className="articleContent">
       <div className="articleTop">
-        <Textfit style={{ flex: '1', height: '100%' }} mode="multi" max={70}>
-          {title}
+        <Textfit style={{ width: '80%', height: '100%' }} mode="multi" max={70}>
+          {title.toLowerCase()}
         </Textfit>
       </div>
       <div className="articleBody">{body}</div>

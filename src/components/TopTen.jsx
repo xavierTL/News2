@@ -13,7 +13,7 @@ class TopTen extends Component {
       <div className="topTenOuter">
         <div className="titleTenContainer">
           <div className="titleTenInner">
-            Popular articles
+            popular articles
             <img
               className="commentIcon trendIcon"
               src={require('../images/trend.svg')}
