@@ -45,8 +45,7 @@ class ArticleDisplay extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.id !== this.props.id) {
-      console.log(this.props.id);
-      api.fetchArticles(this.props.id).then(response => {
+      api.fetchArticleById(this.props.id).then(response => {
         this.setState({ article: response, responded: true });
       });
     }
