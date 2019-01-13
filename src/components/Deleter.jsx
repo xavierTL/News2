@@ -4,7 +4,7 @@ import '../styles/buttons.css';
 const Deleter = ({ article_id, deleteArticle }) => {
   return (
     <button className="deleter" onClick={() => deleteArticle(article_id)}>
-      Delete
+      delete
     </button>
   );
 };

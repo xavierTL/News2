@@ -15,7 +15,7 @@ class NewArticleForm extends Component {
     return (
       <div className="newArticleContainer">
         <div className="newArticleHeader">
-          <h2>your NEW article</h2>
+          <h2>your new article</h2>
         </div>
         <div className="artFormContainer">
           <form onSubmit={this.handleSubmit} className="artForm">
@@ -46,6 +46,8 @@ class NewArticleForm extends Component {
                   </div>
                 </div>
                 <div>
+                  {' '}
+                  TOPIC
                   <select
                     id="topic"
                     value={this.state.topic}
@@ -70,7 +72,7 @@ class NewArticleForm extends Component {
               to={`/articles/${this.state.newArticleId}`}
             >
               <div className="yourNewArticleLink">
-                <p>YOUR NEW ARTICLE</p>
+                <p>your new article</p>
                 <img
                   className="commentIcon newArtLink"
                   src={require('../images/article.svg')}

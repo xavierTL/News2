@@ -8,7 +8,7 @@ class ArticleDisplay extends Component {
   state = {
     article: {},
     responded: false,
-    hasVoted: false
+    voteVariance: 0
   };
   render() {
     const { id, user_id, username } = this.props;
@@ -52,15 +52,18 @@ class ArticleDisplay extends Component {
     }
   }
   toggleVotes = increment => {
+    const { voteVariance } = this.state;
+    const change = voteVariance + increment;
+    if (change === 2 || change === -2) return;
     const { article_id } = this.state.article;
-    const { hasVoted } = this.state;
-    if (!hasVoted) {
-      const newVersion = { ...this.state.article };
-      api.voteOnArticle(article_id, increment).then(response => {
-        newVersion.votes = response.updatedArticle[0].votes;
-        this.setState({ article: newVersion, hasVoted: true });
+    const newVersion = { ...this.state.article };
+    api.voteOnArticle(article_id, increment).then(response => {
+      newVersion.votes = response.updatedArticle[0].votes;
+      this.setState({
+        article: newVersion,
+        voteVariance: voteVariance + increment
       });
-    }
+    });
   };
   deleteArticle = id => {
     const blank = {};

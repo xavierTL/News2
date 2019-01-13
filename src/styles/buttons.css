@@ -83,3 +83,8 @@
 .deleter {
   font-size: 20px;
 }
+.button-one {
+  font-weight: 900;
+  border: solid white 1px;
+  margin-bottom: 2px;
+}

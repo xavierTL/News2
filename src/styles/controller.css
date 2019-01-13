@@ -8,6 +8,7 @@
   flex: 0.5;
   color: black;
   display: flex;
+  padding-bottom: 3px;
   border-bottom: solid black 1px;
 }
 

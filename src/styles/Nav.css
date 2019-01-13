@@ -68,6 +68,7 @@ button:hover,
 select:hover,
 input:hover {
   background-color: lightcoral;
+  border: solid black 1px;
 }
 
 #selected {

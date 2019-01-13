@@ -16,7 +16,7 @@ class ArticleComments extends Component {
     return (
       <>
         <button onClick={() => this.toggleShow()} className="button-one">
-          {show ? 'Hide' : 'Show'} Comments
+          {show ? 'hide' : 'show'} comments
         </button>
 
         {show ? (
