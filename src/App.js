@@ -9,14 +9,11 @@ import ArticleDisplay from './components/ArticleDisplay';
 import NewArticle from './components/NewArticle';
 import Auth from './components/Auth';
 import Home from './components/Home';
+import NewTopic from './components/NewTopic';
 
 class App extends Component {
   state = {
     user: {
-      // username: 'default',
-      // name: 'Default Dave',
-      // avatar_url: '',
-      // user_id: 99999
       username: 'tickle122',
       name: 'Tom Tickle',
       avatar_url: '',
@@ -42,6 +39,12 @@ class App extends Component {
                 username={username}
               />
               <NewArticle path="publish" user_id={user_id} topics={topics} />
+              <NewTopic
+                path="topic"
+                user_id={user_id}
+                topics={topics}
+                updateTopics={this.updateTopics}
+              />
             </Router>
             <SideBar username={username} topics={topics} />
           </div>
@@ -57,6 +60,11 @@ class App extends Component {
       });
     });
   }
+  updateTopics = () => {
+    api.fetchTopics().then(topics => {
+      this.setState({ topics });
+    });
+  };
   setUser = username => {
     const user = this.state.users.find(user => user.username === username);
     if (user) {

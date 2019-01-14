@@ -74,3 +74,8 @@ export const fetchTopTen = async () => {
   const { data } = await axios.get(URL);
   return data;
 };
+
+export const postNewTopic = async post => {
+  const { data } = await axios.post(`${BASE_URL}topics`, post);
+  return data;
+};

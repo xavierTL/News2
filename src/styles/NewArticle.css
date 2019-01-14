@@ -54,6 +54,7 @@
   border: 0px;
   font-size: 200%;
   border: solid white 1px;
+  border-bottom: solid black 1px;
 }
 .titleInput:focus,
 .titleInput:hover {
@@ -86,6 +87,7 @@
   border: 0px;
   padding: 9px;
   border: solid white 1px;
+  border-bottom: solid black 1px;
 }
 .articleTextArea:focus,
 .articleTextArea:hover {
