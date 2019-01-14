@@ -30,17 +30,26 @@
   background-color: black;
 }
 .topicsContainer {
-  overflow: scroll;
   display: flex;
   flex-direction: column;
 }
 .topicButton {
   width: 100%;
+  overflow: scroll;
 }
 
-.topicButtons {
+.topicsDiv {
+  overflow: scroll;
+}
+
+.topicDiv {
   height: 50px;
   display: flex;
+  flex: 9;
+}
+
+.topicH2Cont {
+  flex: 1;
 }
 
 .inner {

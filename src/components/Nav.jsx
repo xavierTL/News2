@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../styles/Nav.css';
 import '../styles/App.css';
 import { Link } from '@reach/router';
-import * as utils from '../utils';
 
 class Nav extends Component {
   state = { select: null };
@@ -28,24 +27,28 @@ class Nav extends Component {
           </Link>
         </div>
         <div className="topicsContainer">
-          <h2 className="topicHead">topics</h2>
-          {topics.map(topic => (
-            <div key={topic.slug} className="topicButtons">
-              <Link
-                to={`/topics/${topic.slug}`}
-                className="topicButton"
-                style={{ textDecoration: 'none', color: 'black' }}
-              >
-                <button
-                  className="inner"
-                  id={this.state.select === topic.slug ? 'selected' : null}
-                  onClick={() => this.toggleActive(topic.slug)}
+          <div className="topicH2Cont">
+            <h2 className="topicHead">topics</h2>
+          </div>
+          <div className="topicsDiv">
+            {topics.map(topic => (
+              <div key={topic.slug} className="topicDiv">
+                <Link
+                  to={`/topics/${topic.slug}`}
+                  className="topicButton"
+                  style={{ textDecoration: 'none', color: 'black' }}
                 >
-                  {topic.slug.toLowerCase()}
-                </button>
-              </Link>
-            </div>
-          ))}
+                  <button
+                    className="inner"
+                    id={this.state.select === topic.slug ? 'selected' : null}
+                    onClick={() => this.toggleActive(topic.slug)}
+                  >
+                    {topic.slug.toLowerCase()}
+                  </button>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );
