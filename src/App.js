@@ -14,7 +14,7 @@ import NewTopic from './components/NewTopic';
 class App extends Component {
   state = {
     user: {
-      username: 'tickle122',
+      username: '',
       name: 'Tom Tickle',
       avatar_url: '',
       user_id: 1

@@ -37,7 +37,7 @@ class ArticlesByTopicDisplay extends Component {
             </>
           ) : (
             <div className="nothingHere">
-              <div className="nothingHereMessage">{`loading...`}</div>
+              <div className="nothingHereMessage">{`... be the first to post`}</div>
             </div>
           )}
         </div>

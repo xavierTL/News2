@@ -6,17 +6,16 @@ class Login extends Component {
   };
   render() {
     return (
-      <div>
-        <div className="commentFormContainer" />
-        <div className="newCommentHeader">
-          <p>username:</p>
+      <div className="loginCont">
+        <div className="loginHeader">
+          <p>please enter your username:</p>
         </div>
-        <div className="formContainer">
-          <form onSubmit={this.handleSubmit}>
+        <div className="loginFormContainer">
+          <form className="loginForm" onSubmit={this.handleSubmit}>
             <label>
-              <div>
+              <div className="loginLabel">
                 <input
-                  className="commentField"
+                  className="loginInput"
                   id="username"
                   type="text"
                   value={this.state.username}
@@ -25,7 +24,7 @@ class Login extends Component {
               </div>
               <div />
             </label>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" className="loginField" />
           </form>
         </div>
       </div>

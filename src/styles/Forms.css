@@ -10,6 +10,53 @@
   font-family: Roboto;
 }
 
+.loginCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  font-family: Roboto;
+}
+
+.loginHeader,
+.loginFormContainer {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginHeader,
+.loginField {
+  display: flex;
+  justify-content: center;
+}
+
+.loginForm {
+  width: 100%;
+  height: 100%;
+}
+
+.loginField {
+  width: 100%;
+  height: 30%;
+  border: solid white 1px;
+}
+
+.loginLabel {
+  height: 30%;
+}
+
+.loginInput {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 100%;
+}
+
 .formInner {
   display: flex;
   flex: 1;
