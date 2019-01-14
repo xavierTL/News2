@@ -8,7 +8,11 @@ class Login extends Component {
     return (
       <div className="loginCont">
         <div className="loginHeader">
-          <p>please enter your username:</p>
+          <img
+            className="logo homeIcon"
+            alt="logo"
+            src={require('../images/icon.svg')}
+          />
         </div>
         <div className="loginFormContainer">
           <form className="loginForm" onSubmit={this.handleSubmit}>
@@ -24,7 +28,7 @@ class Login extends Component {
               </div>
               <div />
             </label>
-            <input type="submit" value="Submit" className="loginField" />
+            <input type="submit" value="login" className="loginField" />
           </form>
         </div>
       </div>
